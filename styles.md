@@ -51,3 +51,27 @@ Google example: ✓ = well-known example; ? = check before quoting it as fact.
 - **Victorian**: ornamental frames (SVG filigree), oxblood/forest/gold, blackletter or Victorian display headline + old-style serif body, engraving-style images.
 - **Cyberpunk**: near-black with neon pink/cyan/yellow, glitch offsets, angled clipped corners, HUD brackets, condensed techno font (Rajdhani, Oxanium).
 - **Wabi-Sabi**: stone/clay/linen palette, paper grain, irregular blob shapes, lots of empty space, soft serif; nothing perfectly aligned that doesn't need to be.
+
+## More styles (not in the picker)
+The picker keeps 22 so the choice stays quick. chrislemke/website_designs has 314 (catalog: https://chrislemke.github.io/website_designs/). This shortlist covers common gaps; offer it when the user asks for more, or build any catalog name typed into "Other" from its guide `designs/<Ref>.md`.
+
+| Group | Style | Definition | Ref |
+|---|---|---|---|
+| Modernist classics | Bauhaus | Primary colors, circles, squares and triangles, geometric sans; function first | Bauhaus |
+| Modernist classics | Art Deco | Gold on black, symmetric geometric ornament, stepped shapes, tall display type | Art_Deco |
+| Modernist classics | Mid-Century Modern | 1950s–60s warm orange and teal, organic shapes, atomic accents | Mid-Century_Modern |
+| Modernist classics | Memphis Design | 1980s squiggles, confetti shapes, clashing brights | Memphis_Design |
+| Digital eras | Flat Design | No shadows or texture: solid color and simple icons | Flat_Design |
+| Digital eras | Material Design | Paper-like layers, elevation shadows, bold color, purposeful motion | Material_Design |
+| Digital eras | Skeuomorphism | Controls that imitate real objects: leather, glass, stitching | Skeuomorphism |
+| Digital eras | Frutiger Aero | 2000s glossy sky blue and green, bubbles, nature-meets-tech optimism | Frutiger_Aero |
+| Digital eras | Windows 95/98 | Grey bevelled windows, title bars, chunky system buttons | Windows_95_98 |
+| Digital eras | Vaporwave | Pink and teal, Greek busts, 90s computer graphics, ironic nostalgia | Vaporwave |
+| Product and tech | Terminal / CLI | Monospace green or amber on black, prompts, ASCII boxes | Terminal_CLI_Aesthetic |
+| Product and tech | Dark Mode Neon | Near-black UI with glowing neon accents | Dark_Mode_Neon |
+| Product and tech | Liquid Glass | Refractive glassy controls that bend the content behind them | Liquid_Glass |
+| Product and tech | Isometric Design | 3D-looking illustration at a fixed angle | Isometric_Design |
+| Mood | Japandi | Japanese and Scandinavian calm: light wood, muted neutrals, clean lines | Japandi |
+| Mood | Dark Academia | Old-library browns, serif type, paper texture | Dark_Academia |
+| Mood | Solarpunk | Hopeful green future: plants, sunlight, flowing curves | Solarpunk |
+| Mood | Risograph | Grainy two-color print look, misregistered overlays, bright inks | Risograph |

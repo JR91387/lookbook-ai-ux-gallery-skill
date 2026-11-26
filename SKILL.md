@@ -5,7 +5,7 @@ license: MIT
 compatibility: Claude Code or any agent that can write files. A multiple-choice question tool and a headless browser are optional; the skill falls back without them.
 metadata:
   author: Jerry Reinitz
-  version: "1.0"
+  version: "1.1"
   source: https://github.com/JR91387/lookbook-ai-ux-gallery-skill
 ---
 
@@ -14,11 +14,18 @@ metadata:
 Output: one gallery page. Every style shows the **same content and structure**; only the look changes. The user rates (1–5) and comments on each; the page builds a JSON feedback block with a Copy button.
 
 Files here:
-- `styles.md` — the 22-style catalog (definition, feel, example to Google, reference preview). Read it before the picker.
+- `styles.md` — the 22-style catalog (definition, feel, example to Google, reference preview), plus a shortlist of 18 more. Read it before the picker.
 - `gallery_template.html` — the gallery shell. Copy it; never hand-build the gallery.
 
 ## 1. Pin the subject
 What is being built (a screen, a landing page, a card, a dashboard)? If the user gave it, use it. If not, ask once. Write a short **content spec**: sections, copy, data, interactions. Every variant uses this spec word for word, so the comparison is fair.
+
+**Use the user's own project material.** Before writing the spec, look for what the project already has and build from it instead of placeholders:
+- Visual media: logos, icons, photos, illustrations, screenshots of the current UI, brand or media folders.
+- Design sources: theme or token files (CSS variables, Tailwind config, design tokens), style guides, existing pages.
+- Documentation: README and docs, project instruction files (`CLAUDE.md`, `AGENTS.md` and similar), and your memory or notes about the user and project, for real product names, copy, audience and data.
+
+Rules: use real copy and real assets where they exist; never invent facts about the product. The same assets and copy go into every variant; the style changes how they're treated, not what they are. Embed images as data: URIs (the gallery must open from disk). Skip anything that looks private or secret (keys, personal data); ask if unsure. List the sources you used in the content spec.
 
 ## 2. Pick styles (multi-select question)
 Use your environment's question tool (in Claude Code, AskUserQuestion with multiSelect). If there isn't one, give numbered options grouped the same way. Two prompts, grouped as below (tool limit: 4 options per question, 4 questions per prompt).
@@ -39,9 +46,10 @@ Round 2
 
 - Option `label`: style name. Recommended ones get `⭐ ` in front of the label: 2–4 total across both rounds, picked for this subject and audience. Include one safe pick and one stretch pick.
 - Option `description`: one-line definition + feel from `styles.md`. Add the Google example if it fits.
-- Question text says ⭐ = recommended for this subject, and that "Other" accepts any style name.
+- Question text says ⭐ = recommended for this subject, and that "Other" accepts any style name, including any from the full catalog linked in `styles.md`.
 - Fewer than 2 picked: ask again. More than 6: confirm, since every style is a full build.
 - A style typed into "Other" that is not in `styles.md`: define it in one line in the gallery card and build it. Do not add it to the catalog without the user's go.
+- User wants more choices: offer the 18-style "More styles" shortlist in `styles.md` as a third round (grouped the same way), and say any of the 314 styles at https://chrislemke.github.io/website_designs/ can be typed into "Other".
 
 ## 3. Build each variant
 - If your environment has an artifact or page-design skill, load it before writing.
